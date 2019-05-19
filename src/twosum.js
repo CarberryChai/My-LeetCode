@@ -8,4 +8,17 @@ function twoSum(nums, target) {
     arr.push(nums[i])
   }
 }
-module.exports = twoSum
+function two_sum(nums, target) {
+  const map = new Map()
+  for (let i = 0, l = nums.length; i < l; i++) {
+    const diff = target - nums[i]
+    if (map.has(diff)) {
+      return [map.get(diff), i]
+    }
+   map.set(nums[i], i)
+  }
+}
+module.exports = {
+  twoSum,
+  two_sum
+}
